@@ -1,0 +1,91 @@
+name:                bullet-game
+version:             1.0.1.0
+license:             Apache-2.0
+category:            Game
+synopsis:            A bullet-hell game made with SDL2.
+description:         A purely functional bullet-hell game made with SDL2. Visit https://gilmi.me/nyx for more details.
+
+extra-source-files:
+- README.md
+
+data-files:
+- assets/**/*
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- dlist
+- mtl
+- text
+- bytestring
+- vector
+- lens
+- bytestring
+- deepseq
+- random
+- stm
+- async
+- optparse-generic
+- sdl2
+- sdl2-image
+- sdl2-mixer
+- sdl2-ttf
+
+library:
+  source-dirs: src
+  default-extensions:
+  - ConstraintKinds
+  - DataKinds
+  - DeriveFunctor
+  - EmptyDataDecls
+  - FlexibleContexts
+  - KindSignatures
+  - LambdaCase
+  - MultiParamTypeClasses
+  - MultiWayIf
+  - PatternGuards
+  - PatternSynonyms
+  - RankNTypes
+  - RecordWildCards
+  - NamedFieldPuns
+  - ScopedTypeVariables
+  - TupleSections
+  - ViewPatterns
+  - BangPatterns
+
+
+executables:
+  app:
+    main:                Main.hs
+    source-dirs:         app
+    dependencies:
+    - base
+    - bullet-game
+
+    ghc-options:
+    - -Wall
+    - -fno-warn-missing-signatures
+    - -O2
+    - -rtsopts
+    - -funfolding-use-threshold=16
+    - -optc-O3
+
+    default-extensions:
+    - ConstraintKinds
+    - DataKinds
+    - DeriveFunctor
+    - EmptyDataDecls
+    - FlexibleContexts
+    - KindSignatures
+    - LambdaCase
+    - MultiParamTypeClasses
+    - MultiWayIf
+    - PatternGuards
+    - PatternSynonyms
+    - RankNTypes
+    - RecordWildCards
+    - NamedFieldPuns
+    - ScopedTypeVariables
+    - TupleSections
+    - ViewPatterns
+
